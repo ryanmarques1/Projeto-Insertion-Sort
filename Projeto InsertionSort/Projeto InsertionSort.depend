@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1664658529 source:e:\documentos\ufv\4 semestre\sin 213\projeto insertionsort\main.c
+	"base.h"
+
+1664659283 e:\documentos\ufv\4 semestre\sin 213\projeto insertionsort\base.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<conio.h>
+
