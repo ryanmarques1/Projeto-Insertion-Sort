@@ -30,6 +30,7 @@ int main()
                     printf("Crescente\n");
                     break;
                 case 'd':
+                    arquiv_decrescente(tam_op, ftb_bin, ftp);
                     printf("Decrescente\n");
                     break;
                 case 'r':

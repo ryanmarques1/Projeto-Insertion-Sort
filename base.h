@@ -61,7 +61,7 @@ void arquiv_crescente(int op_tam,FILE *ftp_bin, FILE *ftp){
             n = 10;
             vet = calloc(n,sizeof(int));
             printf("Semente: %d", semente);
-            for(int i = 0; i < 10; i++){
+            for(int i = 0; i < n; i++){
                 printf("Semente: %d ", ++semente);
                 vet[i] = semente;
                 fwrite(vet,sizeof(int),1,ftp_bin);
@@ -70,7 +70,177 @@ void arquiv_crescente(int op_tam,FILE *ftp_bin, FILE *ftp){
             ftp_bin = fopen("Arquivos//Crescentes//10.bin", "r");
             ftp = fopen("Arquivos//Crescentes//10.txt", "w");
             fprintf(ftp,"10\n");
-            for(int j = 0; j < 10; j++){
+            for(int j = 0; j < n; j++){
+                if(fread(vet,sizeof(int),1,ftp_bin)<=0){
+                    printf("\nvazio\n");
+                    exit(-1);
+            }
+                fprintf(ftp,"%d\n",vet[j]);
+            }
+            err = fclose(ftp_bin);
+            err == 0 ? printf("fechou com sucesso!\n") : printf("error ao fechar!\n");
+            free(vet);
+
+            break;
+        case 2:
+            printf("Arquivos de entrada 100\n");
+            ftp_bin = fopen("Arquivos//Crescentes//100.bin", "wb");
+            ftp_bin != NULL ? printf("Deu certo !\n") : printf("Nao deu certo!\n");
+            n = 100;
+            vet = calloc(n,sizeof(int));
+            for(int i = 0; i < n; i++){
+                ++semente;
+                vet[i] = semente;
+                fwrite(vet,sizeof(int),1,ftp_bin);
+
+            }
+            fclose(ftp_bin);
+            ftp_bin = fopen("Arquivos//Crescentes//100.bin", "r");
+            ftp = fopen("Arquivos//Crescentes//100.txt", "w");
+            fprintf(ftp,"100\n");
+            for(int j = 0; j < n; j++){
+                if(fread(vet,sizeof(int),1,ftp_bin) <= 0){
+                    printf("\nvazio\n");
+                    exit(-1);
+                }
+                fprintf(ftp,"%d\n",vet[j]);
+            }
+            err = fclose(ftp_bin);
+            err == 0 ? printf("fechou com sucesso !\n") : printf("error ao fechar!\n");
+            free(vet);
+            break;
+        case 3:
+            printf("Arquivos de entrada 1000\n");
+            ftp_bin = fopen("Arquivos//Crescentes//1000.bin", "wb");
+            ftp_bin != NULL ? printf("Deu certo !\n") : printf("Nao deu certo!\n");
+            n = 1000;
+            vet = calloc(n,sizeof(int));
+            for(int i = 0; i < n; i++){
+                ++semente;
+                vet[i] = semente;
+                fwrite(vet,sizeof(int),1,ftp_bin);
+            }
+            fclose(ftp_bin);
+            ftp_bin = fopen("Arquivos//Crescentes//1000.bin", "r");
+            ftp = fopen("Arquivos//Crescentes//1000.txt", "w");
+            fprintf(ftp, "1000\n");
+            for(int j = 0; j < n; j++){
+                if(fread(vet,sizeof(int),1,ftp_bin)<=0){
+                    printf("\nvazio\n");
+                    exit(-1);
+                }
+                fprintf(ftp,"%d\n",vet[j]);
+            }
+            err = fclose(ftp_bin);
+            err == 0 ? printf("Fechado com sucesso!\n") : printf("error ao fechar!\n");
+            free(vet);
+            break;
+        case 4:
+            printf("Arquivos de entrada 10.000\n");
+            ftp_bin = fopen("Arquivos//Crescentes//10000.bin", "wb");
+            ftp_bin != NULL ? printf("Deu certo!\n") : printf("Nao deu certo!\n");
+            n = 10000;
+            vet = calloc(n,sizeof(int));
+            for(int i = 0; i < n; i++){
+                ++semente;
+                vet[i] = semente;
+                fwrite(vet,sizeof(int),1,ftp_bin);
+            }
+            fclose(ftp_bin);
+            ftp_bin = fopen("Arquivos//Crescentes//10000.bin", "r");
+            ftp = fopen("Arquivos//Crescentes//10000.txt", "w");
+            fprintf(ftp,"10000\n");
+            for(int j = 0; j < n; j++){
+                if(fread(vet,sizeof(int),1,ftp_bin)<= 0){
+                    printf("\nvazio\n");
+                    exit(-1);
+                }
+                fprintf(ftp,"%d\n",vet[j]);
+            }
+            err = fclose(ftp_bin);
+            err == 0 ? printf("Fechou com sucesso!\n") : printf("Error ao fechar!\n");
+            free(vet);
+            break;
+        case 5:
+            printf("Arquivos de entrada 100.000\n");
+            ftp_bin = fopen("Arquivos//Crescentes//100000.bin", "wb");
+            ftp_bin != NULL ? printf("Deu certo!\n") : printf("Nao deu certo!\n");
+            n = 100000;
+            vet = calloc(n,sizeof(int));
+            for(int i = 0; i < n; i++){
+                ++semente;
+                vet[i] = semente;
+                fwrite(vet,sizeof(int),1,ftp_bin);
+            }
+            fclose(ftp_bin);
+            ftp_bin = fopen("Arquivos//Crescentes//100000.bin", "r");
+            ftp = fopen("Arquivos//Crescentes//100000.txt", "w");
+            fprintf(ftp,"100000\n");
+            for(int j = 0; j < n; j++){
+                if(fread(vet,sizeof(int),1,ftp_bin)<= 0){
+                    printf("\nvazio\n");
+                    exit(-1);
+                }
+                fprintf(ftp,"%d\n",vet[j]);
+            }
+            err = fclose(ftp_bin);
+            err == 0 ? printf("Fechou com sucesso!\n") : printf("Error ao fechar!\n");
+            free(vet);
+            break;
+        case 6:
+            printf("Arquivos de entrada 1.000.000\n");
+            ftp_bin = fopen("Arquivos//Crescentes//1000000.bin", "wb");
+            ftp_bin != NULL ? printf("Deu certo!\n") : printf("Nao deu certo!\n");
+            n = 1000000;
+            vet = calloc(n,sizeof(int));
+            for(int i = 0; i < n; i++){
+                ++semente;
+                vet[i] = semente;
+                fwrite(vet,sizeof(int),1,ftp_bin);
+            }
+            fclose(ftp_bin);
+            ftp_bin = fopen("Arquivos//Crescentes//1000000.bin", "r");
+            ftp = fopen("Arquivos//Crescentes//1000000.txt", "w");
+            fprintf(ftp,"1000000\n");
+            for(int j = 0; j < n; j++){
+                if(fread(vet,sizeof(int),1,ftp_bin)<= 0){
+                    printf("\nvazio\n");
+                    exit(-1);
+                }
+                fprintf(ftp,"%d\n",vet[j]);
+            }
+            err = fclose(ftp_bin);
+            err == 0 ? printf("Fechou com sucesso!\n") : printf("Error ao fechar!\n");
+            free(vet);
+            break;
+        default:
+            printf("PDI 199191\n\n");
+            break;
+   }
+}
+void arquiv_decrescente(int op_tam,FILE *ftp_bin, FILE *ftp){
+    srand(time(NULL));
+    char ord,cdr;
+    int err, n = 0,semente, *vet;
+    semente = (rand() % 100000)*100;
+    switch(op_tam){
+        case 1:
+            printf("Arquivos de entrada 10\n");
+            ftp_bin = fopen("Arquivos//Decrescentes//10.bin", "wb");
+            ftp_bin != NULL ? printf("Deu certo !\n") : printf("Nao deu certo!\n");
+            n = 10;
+            vet = calloc(n,sizeof(int));
+            printf("Semente: %d", semente);
+            for(int i = 11; i > 0; i--){
+                printf("Semente: %d ", --semente);
+                vet[i] = semente;
+                fwrite(vet,sizeof(int),1,ftp_bin);
+            }
+            fclose(ftp_bin);
+            ftp_bin = fopen("Arquivos//Decrescentes//10.bin", "r");
+            ftp = fopen("Arquivos//Decrescentes//10.txt", "w");
+            fprintf(ftp,"10\n");
+            for(int j = 11; j > 0; j--){
                 if(fread(vet,sizeof(int),1,ftp_bin)<=0){
                     printf("\nvazio\n");
                     exit(-1);
@@ -79,12 +249,61 @@ void arquiv_crescente(int op_tam,FILE *ftp_bin, FILE *ftp){
             }
             err = fclose(ftp_bin);
             err == 0 ? printf("fechou com sucesso!\n") : printf("error ao fechar!\n");
+            free(vet);
+
             break;
         case 2:
             printf("Arquivos de entrada 100\n");
+            ftp_bin = fopen("Arquivos//Decrescentes//100.bin", "wb");
+            ftp_bin != NULL ? printf("Deu certo !\n") : printf("Nao deu certo!\n");
+            n = 100;
+            vet = calloc(n,sizeof(int));
+            for(int i = 0; i < 100; i++){
+                ++semente;
+                vet[i] = semente;
+                fwrite(vet,sizeof(int),1,ftp_bin);
+
+            }
+            fclose(ftp_bin);
+            ftp_bin = fopen("Arquivos//Decrescentes//100.bin", "r");
+            ftp = fopen("Arquivos//Decrescentes//100.txt", "w");
+            fprintf(ftp,"100\n");
+            for(int j = 0; j < 100; j++){
+                if(fread(vet,sizeof(int),1,ftp_bin) <= 0){
+                    printf("\nvazio\n");
+                    exit(-1);
+                }
+                fprintf(ftp,"%d\n", vet[j]);
+            }
+            err = fclose(ftp_bin);
+            err == 0 ? printf("fechou com sucesso !\n") : printf("error ao fechar!\n");
+            free(vet);
             break;
         case 3:
             printf("Arquivos de entrada 1000\n");
+            ftp_bin = fopen("Arquivos//Decrescentes//1000.bin", "wb");
+            ftp_bin != NULL ? printf("Deu certo !\n") : printf("Nao deu certo!\n");
+            n = 1000;
+            vet = calloc(n,sizeof(int));
+            for(int i = 0; i < 1000; i++){
+                ++semente;
+                vet[i] = semente;
+                fwrite(vet,sizeof(int),1,ftp_bin);
+            }
+            fclose(ftp_bin);
+            ftp_bin = fopen("Arquivos//Decrescentes//1000.bin", "r");
+            ftp = fopen("Arquivos//Decrescentes//1000.txt", "w");
+            fprintf(ftp, "1000\n");
+            for(int j = 0; j < 1000; j++){
+                if(fread(vet,sizeof(int),1,ftp_bin)<=0){
+                    printf("\nvazio\n");
+                    exit(-1);
+                }
+                fprintf(ftp,"%d\n", vet[j]);
+            }
+            err = fclose(ftp_bin);
+            err == 0 ? printf("Fechado com sucesso!\n") : printf("error ao fechar!\n");
+            free(vet);
             break;
         case 4:
             printf("Arquivos de entrada 10.000\n");
@@ -99,9 +318,6 @@ void arquiv_crescente(int op_tam,FILE *ftp_bin, FILE *ftp){
             printf("PDI 199191\n\n");
             break;
    }
-
-   free(vet);
-
 }
 void arquiv_10(FILE *ftp_bin, FILE *ftp, int vet_10[]){
     srand(time(NULL));
