@@ -8,7 +8,7 @@ int main()
 
     int op, tam_op;
     char op2;
-    FILE *ftp = NULL,*ftb_bin = NULL;
+    FILE *ftp = NULL;
     do{
         hud();
         scanf("%d", &op);
@@ -23,15 +23,15 @@ int main()
             scanf("%c", &op2);
             switch(op2){
                 case 'c':
-                    arquiv_crescente(tam_op, ftb_bin, ftp);
+                    arquiv_crescente(tam_op,ftp);
                     printf("Crescente\n");
                     break;
                 case 'd':
-                    arquiv_decrescente(tam_op, ftb_bin, ftp);
+                    arquiv_decrescente(tam_op, ftp);
                     printf("Decrescente\n");
                     break;
                 case 'r':
-                    arquiv_random(tam_op,ftb_bin,ftp);
+                    arquiv_random(tam_op,ftp);
                     printf("Randomica\n");
                     break;
             }

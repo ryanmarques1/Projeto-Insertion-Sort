@@ -2,211 +2,144 @@
 #define CRESCENTE_H_INCLUDED
 
 #include "base.h"
-void arquiv_crescente(int op_tam,FILE *ftp_bin, FILE *ftp){
+void arquiv_crescente(int op_tam, FILE *ftp){
     srand(time(NULL));
     char ord,cdr;
     double temp_exec;
     clock_t Start,End;
     int err, n = 0,semente, *vet;
-    semente = (rand() % 100000)*100;
+    semente = (rand() % 1000000)*100;
     switch(op_tam){
         case 1:
             printf("Arquivos de entrada 10\n");
-            ftp_bin = fopen("ArquivosdeEntrada//Crescentes//10.bin", "wb");
-            ftp_bin != NULL ? printf("Deu certo !\n") : printf("Nao deu certo!\n");
             n = 10;
             vet = calloc(n,sizeof(int));
             printf("Semente Gerada: %d", semente);
+            ftp = fopen("ArquivosdeEntrada//Crescentes//10cres.txt", "w");
+            fprintf(ftp,"10\n");
             for(int i = 0; i < n; i++){
                 ++semente;
                 vet[i] = semente;
-                fwrite(vet,sizeof(int),1,ftp_bin);
+                fprintf(ftp,"%d\n",vet[i]);
             }
-            fclose(ftp_bin);
-            ftp_bin = fopen("ArquivosdeEntrada//Crescentes//10.bin", "r");
-            ftp = fopen("ArquivosdeEntrada//Crescentes//10.txt", "w");
-            fprintf(ftp,"10\n");
-            for(int j = 0; j < n; j++){
-                if(fread(vet,sizeof(int),1,ftp_bin)<=0){
-                    printf("\nvazio\n");
-                    exit(-1);
-            }
-                fprintf(ftp,"%d\n",vet[j]);
-            }
+            fclose(ftp);
             printf("\n-----------------------------------\n");
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            printf("Tempo de execucao: %.4lf", temp_exec);
-            err = fclose(ftp_bin);
-            err == 0 ? printf("fechou com sucesso!\n") : printf("error ao fechar!\n");
+            ftp = fopen("ArquivosdeTempo//Crescentes//tempo10cres.txt", "w");
+            fprintf(ftp,"Tempo de exec foi: %.4lf", temp_exec);
             free(vet);
             break;
         case 2:
             printf("Arquivos de entrada 100\n");
-            ftp_bin = fopen("ArquivosdeEntrada//Crescentes//100.bin", "wb");
-            ftp_bin != NULL ? printf("Deu certo !\n") : printf("Nao deu certo!\n");
             n = 100;
             vet = calloc(n,sizeof(int));
             printf("Semente Gerada: %d", semente);
+            ftp = fopen("ArquivosdeEntrada//Crescentes//100cres.txt", "w");
+            fprintf(ftp,"100\n");
             for(int i = 0; i < n; i++){
                 ++semente;
                 vet[i] = semente;
-                fwrite(vet,sizeof(int),1,ftp_bin);
-
+                fprintf(ftp,"%d\n",vet[i]);
             }
-            fclose(ftp_bin);
-            ftp_bin = fopen("ArquivosdeEntrada//Crescentes//100.bin", "r");
-            ftp = fopen("ArquivosdeEntrada//Crescentes//100.txt", "w");
-            fprintf(ftp,"100\n");
-            for(int j = 0; j < n; j++){
-                if(fread(vet,sizeof(int),1,ftp_bin) <= 0){
-                    printf("\nvazio\n");
-                    exit(-1);
-                }
-                fprintf(ftp,"%d\n",vet[j]);
-            }
+            fclose(ftp);
             printf("\n-----------------------------------\n");
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            printf("Tempo de execucao: %.4lf", temp_exec);
-            err = fclose(ftp_bin);
-            err == 0 ? printf("fechou com sucesso !\n") : printf("error ao fechar!\n");
+            ftp = fopen("ArquivosdeTempo//Crescentes//tempo100cres.txt", "w");
+            fprintf(ftp,"Tempo de exec foi: %.4lf", temp_exec);
             free(vet);
             break;
         case 3:
             printf("Arquivos de entrada 1000\n");
-            ftp_bin = fopen("ArquivosdeEntrada//Crescentes//1000.bin", "wb");
-            ftp_bin != NULL ? printf("Deu certo !\n") : printf("Nao deu certo!\n");
             n = 1000;
             vet = calloc(n,sizeof(int));
             printf("Semente Gerada: %d", semente);
+            ftp = fopen("ArquivosdeEntrada//Crescentes//1000cres.txt", "w");
+            fprintf(ftp,"1000\n");
             for(int i = 0; i < n; i++){
                 ++semente;
                 vet[i] = semente;
-                fwrite(vet,sizeof(int),1,ftp_bin);
+                fprintf(ftp,"%d\n",vet[i]);
             }
-            fclose(ftp_bin);
-            ftp_bin = fopen("ArquivosdeEntrada//Crescentes//1000.bin", "r");
-            ftp = fopen("ArquivosdeEntrada//Crescentes//1000.txt", "w");
-            fprintf(ftp, "1000\n");
-            for(int j = 0; j < n; j++){
-                if(fread(vet,sizeof(int),1,ftp_bin)<=0){
-                    printf("\nvazio\n");
-                    exit(-1);
-                }
-                fprintf(ftp,"%d\n",vet[j]);
-            }
+            fclose(ftp);
             printf("\n-----------------------------------\n");
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            printf("Tempo de execucao: %.4lf", temp_exec);
-            err = fclose(ftp_bin);
-            err == 0 ? printf("Fechado com sucesso!\n") : printf("error ao fechar!\n");
+            ftp = fopen("ArquivosdeTempo//Crescentes//tempo1000cres.txt", "w");
+            fprintf(ftp,"Tempo de exec foi: %.4lf", temp_exec);
             free(vet);
             break;
         case 4:
             printf("Arquivos de entrada 10.000\n");
-            ftp_bin = fopen("ArquivosdeEntrada//Crescentes//10000.bin", "wb");
-            ftp_bin != NULL ? printf("Deu certo!\n") : printf("Nao deu certo!\n");
             n = 10000;
             vet = calloc(n,sizeof(int));
             printf("Semente Gerada: %d", semente);
+            ftp = fopen("ArquivosdeEntrada//Crescentes//10000cres.txt", "w");
+            fprintf(ftp,"10000\n");
             for(int i = 0; i < n; i++){
                 ++semente;
                 vet[i] = semente;
-                fwrite(vet,sizeof(int),1,ftp_bin);
+                fprintf(ftp,"%d\n",vet[i]);
             }
-            fclose(ftp_bin);
-            ftp_bin = fopen("ArquivosdeEntrada//Crescentes//10000.bin", "r");
-            ftp = fopen("ArquivosdeEntrada//Crescentes//10000.txt", "w");
-            fprintf(ftp,"10000\n");
-            for(int j = 0; j < n; j++){
-                if(fread(vet,sizeof(int),1,ftp_bin)<= 0){
-                    printf("\nvazio\n");
-                    exit(-1);
-                }
-                fprintf(ftp,"%d\n",vet[j]);
-            }
+            fclose(ftp);
             printf("\n-----------------------------------\n");
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            printf("Tempo de execucao: %.4lf", temp_exec);
-            err = fclose(ftp_bin);
-            err == 0 ? printf("Fechou com sucesso!\n") : printf("Error ao fechar!\n");
+            ftp = fopen("ArquivosdeTempo//Crescentes//tempo10000cres.txt", "w");
+            fprintf(ftp,"Tempo de exec foi: %.4lf", temp_exec);
             free(vet);
             break;
         case 5:
             printf("Arquivos de entrada 100.000\n");
-            ftp_bin = fopen("ArquivosdeEntrada//Crescentes//100000.bin", "wb");
-            ftp_bin != NULL ? printf("Deu certo!\n") : printf("Nao deu certo!\n");
             n = 100000;
             vet = calloc(n,sizeof(int));
             printf("Semente Gerada: %d", semente);
+            ftp = fopen("ArquivosdeEntrada//Crescentes//100000cres.txt", "w");
+            fprintf(ftp,"100000\n");
             for(int i = 0; i < n; i++){
                 ++semente;
                 vet[i] = semente;
-                fwrite(vet,sizeof(int),1,ftp_bin);
+                fprintf(ftp,"%d\n",vet[i]);
             }
-            fclose(ftp_bin);
-            ftp_bin = fopen("ArquivosdeEntrada//Crescentes//100000.bin", "r");
-            ftp = fopen("ArquivosdeEntrada//Crescentes//100000.txt", "w");
-            fprintf(ftp,"100000\n");
-            for(int j = 0; j < n; j++){
-                if(fread(vet,sizeof(int),1,ftp_bin)<= 0){
-                    printf("\nvazio\n");
-                    exit(-1);
-                }
-                fprintf(ftp,"%d\n",vet[j]);
-            }
+            fclose(ftp);
             printf("\n-----------------------------------\n");
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            printf("Tempo de execucao: %.4lf", temp_exec);
-            err = fclose(ftp_bin);
-            err == 0 ? printf("Fechou com sucesso!\n") : printf("Error ao fechar!\n");
+            ftp = fopen("ArquivosdeTempo//Crescentes//tempo100000cres.txt", "w");
+            fprintf(ftp,"Tempo de exec foi: %.4lf", temp_exec);
             free(vet);
             break;
         case 6:
             printf("Arquivos de entrada 1.000.000\n");
-            ftp_bin = fopen("ArquivosdeEntrada//Crescentes//1000000.bin", "wb");
-            ftp_bin != NULL ? printf("Deu certo!\n") : printf("Nao deu certo!\n");
             n = 1000000;
             vet = calloc(n,sizeof(int));
             printf("Semente Gerada: %d", semente);
+            ftp = fopen("ArquivosdeEntrada//Crescentes//1000000cres.txt", "w");
+            fprintf(ftp,"1000000\n");
             for(int i = 0; i < n; i++){
                 ++semente;
                 vet[i] = semente;
-                fwrite(vet,sizeof(int),1,ftp_bin);
+                fprintf(ftp,"%d\n",vet[i]);
             }
-            fclose(ftp_bin);
-            ftp_bin = fopen("ArquivosdeEntrada//Crescentes//1000000.bin", "r");
-            ftp = fopen("ArquivosdeEntrada//Crescentes//1000000.txt", "w");
-            fprintf(ftp,"1000000\n");
-            for(int j = 0; j < n; j++){
-                if(fread(vet,sizeof(int),1,ftp_bin)<= 0){
-                    printf("\nvazio\n");
-                    exit(-1);
-                }
-                fprintf(ftp,"%d\n",vet[j]);
-            }
+            fclose(ftp);
             printf("\n-----------------------------------\n");
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            printf("Tempo de execucao: %.4lf", temp_exec);
-            err = fclose(ftp_bin);
-            err == 0 ? printf("Fechou com sucesso!\n") : printf("Error ao fechar!\n");
+            ftp = fopen("ArquivosdeTempo//Crescentes//tempo1000000cres.txt", "w");
+            fprintf(ftp,"Tempo de exec foi: %.4lf", temp_exec);
             free(vet);
             break;
         default:
