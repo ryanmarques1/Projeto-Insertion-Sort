@@ -8,7 +8,7 @@ int main()
 
     int op, tam_op;
     char op2;
-    FILE *ftp = NULL;
+    FILE *ftp = NULL, *saida = NULL;
     do{
         hud();
         scanf("%d", &op);
@@ -27,11 +27,11 @@ int main()
                     printf("Crescente\n");
                     break;
                 case 'd':
-                    arquiv_decrescente(tam_op, ftp);
+                    arquiv_decrescente(tam_op,ftp,saida);
                     printf("Decrescente\n");
                     break;
                 case 'r':
-                    arquiv_random(tam_op,ftp);
+                    arquiv_random(tam_op,ftp,saida);
                     printf("Randomica\n");
                     break;
             }

@@ -52,41 +52,5 @@ double calc_tempexec(clock_t s, clock_t e){
     result = ((e - s) / (double)CLOCKS_PER_SEC);
     return result;
 }
-//função de gerar arquivo de 10 numeros em ordem crescente, decrescente,  randomica.
-void arquiv_10_random(FILE *ftp_bin, FILE *ftp, int vet_10[]){
-    char ord;
-    srand(time(NULL));//resolve o problema de sementes iguais.
-    int err; //variaveis no auxilio de erros;
-    ftp_bin = fopen("Arquivos//Randomicas//10random.bin", "wb");
-    ftp_bin != NULL ? printf("Deu certo!\n") : printf("Error\n");
-    for(int i = 0; i < 10; i++){
-        vet_10[i] = rand() % 80;
-        printf("%d ", vet_10[i]);
-        fwrite(vet_10, sizeof(int),1,ftp_bin);
-    }
-    fclose(ftp_bin);
-    ftp_bin =  fopen("Arquivos//Randomicas//10random.bin", "r");
-    ftp = fopen("Arquivos//Randomicas//10random.txt", "w");
-    fprintf(ftp,"10\n");
-    for(int i = 0; i < 10; i++){
-        if(fread(vet_10,sizeof(int),1,ftp_bin) <=0 ){
-            printf("\nvazio\n");
-            exit(-1);
-        }
-        fprintf(ftp,"%d\n", vet_10[i]);
-    }
-    printf("-----------------------------------\n");
-    printf("Deseja ordenar ? S[sim] N[nao](Insertion Sort): ");
-    getchar();
-    scanf("%c", &ord);
-    if(ord == 'S'){
-        insertion_sort(vet_10,10);
-        for(int i = 0; i < 10; i++){
-            printf("%d ", vet_10[i]);
-        }
-    }
-    err = fclose(ftp_bin);
-    err == 0 ? printf("fechou com sucesso!\n") : printf("error ao fechar!\n");
-}
-//função de gerar arquivo de 10 numeros em ordem crescente, decrescente,  randomica.
+
 #endif // BASE_H_INCLUDED

@@ -4,10 +4,9 @@
 #include "base.h"
 void arquiv_crescente(int op_tam, FILE *ftp){
     srand(time(NULL));
-    char ord,cdr;
     double temp_exec;
     clock_t Start,End;
-    int err, n = 0,semente, *vet;
+    int n = 0,semente, *vet;
     semente = (rand() % 1000000)*100;
     switch(op_tam){
         case 1:

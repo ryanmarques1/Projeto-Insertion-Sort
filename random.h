@@ -2,12 +2,11 @@
 #define RANDOM_H_INCLUDED
 
 #include "base.h"
-void arquiv_random(int op_tam, FILE *ftp){
+void arquiv_random(int op_tam, FILE *ftp, FILE *saida){
     srand(time(NULL));
     double temp_exec;
     clock_t Start, End;
-    char ord,cdr;
-    int err, n = 0,semente, *vet;
+    int n = 0,semente, *vet;
     switch(op_tam){
         case 1:
             printf("Arquivos de entrada 10\n");
@@ -25,6 +24,11 @@ void arquiv_random(int op_tam, FILE *ftp){
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
+            printf("\nOrdenacao feita\n");
+            saida = fopen("ArquivosdeSaida//Randomicas//10ord.txt", "w");
+            for(int k = 0; k < n; k++){
+                fprintf(saida, "%d\n", vet[k]);
+            }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
             ftp = fopen("ArquivosdeTempo//Randomicas//tempo10random.txt", "w");
             fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
@@ -46,6 +50,11 @@ void arquiv_random(int op_tam, FILE *ftp){
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
+            printf("\nOrdenacao feita\n");
+            saida = fopen("ArquivosdeSaida//Randomicas//100ord.txt", "w");
+            for(int k = 0; k < n; k++){
+                fprintf(saida, "%d\n", vet[k]);
+            }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
             ftp = fopen("ArquivosdeTempo//Randomicas//tempo100random.txt", "w");
             fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
@@ -67,6 +76,11 @@ void arquiv_random(int op_tam, FILE *ftp){
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
+            printf("\nOrdenacao feita\n");
+            saida = fopen("ArquivosdeSaida//Randomicas//1000ord.txt", "w");
+            for(int k = 0; k < n; k++){
+                fprintf(saida, "%d\n", vet[k]);
+            }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
             ftp = fopen("ArquivosdeTempo//Randomicas//tempo1000random.txt", "w");
             fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
@@ -88,6 +102,11 @@ void arquiv_random(int op_tam, FILE *ftp){
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
+            printf("\nOrdenacao feita\n");
+            saida = fopen("ArquivosdeSaida//Randomicas//10000ord.txt", "w");
+            for(int k = 0; k < n; k++){
+                fprintf(saida, "%d\n", vet[k]);
+            }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
             ftp = fopen("ArquivosdeTempo//Randomicas//tempo10000random.txt", "w");
             fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
@@ -109,6 +128,11 @@ void arquiv_random(int op_tam, FILE *ftp){
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
+            printf("\nOrdenacao feita\n");
+            saida = fopen("ArquivosdeSaida//Randomicas//100000ord.txt", "w");
+            for(int k = 0; k < n; k++){
+                fprintf(saida, "%d\n", vet[k]);
+            }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
             ftp = fopen("ArquivosdeTempo//Randomicas//tempo100000random.txt", "w");
             fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
@@ -130,6 +154,11 @@ void arquiv_random(int op_tam, FILE *ftp){
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
+            printf("\nOrdenacao feita\n");
+            saida = fopen("ArquivosdeSaida//Randomicas//1000000ord.txt", "w");
+            for(int k = 0; k < n; k++){
+                fprintf(saida, "%d\n", vet[k]);
+            }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
             ftp = fopen("ArquivosdeTempo//Randomicas//tempo1000000random.txt", "w");
             fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
