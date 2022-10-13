@@ -2,7 +2,7 @@
 #define CRESCENTE_H_INCLUDED
 
 #include "base.h"
-void arquiv_crescente(int op_tam, FILE *ftp){
+void arquiv_crescente(int op_tam, FILE *ftp,FILE *saida){
     srand(time(NULL));
     double temp_exec;
     clock_t Start,End;
@@ -26,9 +26,14 @@ void arquiv_crescente(int op_tam, FILE *ftp){
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
+            printf("\nOrdenacao feita!\n");
+            saida = fopen("IS/ArquivosdeSaida//Crescentes//10ord.txt", "w");
+            for(int k = 0; k < n; k++){
+                fprintf(saida, "%d\n", vet[k]);
+            }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Crescentes//tempo10cres.txt", "w");
-            fprintf(ftp,"Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS/ArquivosdeTempo//Crescentes//tempo10cres.txt", "w");
+            fprintf(ftp,"Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         case 2:
@@ -48,9 +53,14 @@ void arquiv_crescente(int op_tam, FILE *ftp){
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
+            printf("\nOrdenacao feita!\n");
+            saida = fopen("IS/ArquivosdeSaida//Crescentes//100ord.txt", "w");
+            for(int k = 0; k < n; k++){
+                fprintf(saida, "%d\n", vet[k]);
+            }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Crescentes//tempo100cres.txt", "w");
-            fprintf(ftp,"Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS/ArquivosdeTempo//Crescentes//tempo100cres.txt", "w");
+            fprintf(ftp,"Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         case 3:
@@ -70,9 +80,14 @@ void arquiv_crescente(int op_tam, FILE *ftp){
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
+            printf("\nOrdenacao feita!\n");
+            saida = fopen("IS/ArquivosdeSaida//Crescentes//1000ord.txt", "w");
+            for(int k = 0; k < n; k++){
+                fprintf(saida, "%d\n", vet[k]);
+            }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Crescentes//tempo1000cres.txt", "w");
-            fprintf(ftp,"Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS/ArquivosdeTempo//Crescentes//tempo1000cres.txt", "w");
+            fprintf(ftp,"Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         case 4:
@@ -92,9 +107,14 @@ void arquiv_crescente(int op_tam, FILE *ftp){
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
+            printf("\nOrdenacao feita!\n");
+            saida = fopen("IS/ArquivosdeSaida//Crescentes//10000ord.txt", "w");
+            for(int k = 0; k < n; k++){
+                fprintf(saida, "%d\n", vet[k]);
+            }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Crescentes//tempo10000cres.txt", "w");
-            fprintf(ftp,"Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS/ArquivosdeTempo//Crescentes//tempo10000cres.txt", "w");
+            fprintf(ftp,"Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         case 5:
@@ -114,9 +134,14 @@ void arquiv_crescente(int op_tam, FILE *ftp){
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
+            printf("\nOrdenacao feita!\n");
+            saida = fopen("IS/ArquivosdeSaida//Crescentes//100000ord.txt", "w");
+            for(int k = 0; k < n; k++){
+                fprintf(saida, "%d\n", vet[k]);
+            }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Crescentes//tempo100000cres.txt", "w");
-            fprintf(ftp,"Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS/ArquivosdeTempo//Crescentes//tempo100000cres.txt", "w");
+            fprintf(ftp,"Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         case 6:
@@ -136,13 +161,18 @@ void arquiv_crescente(int op_tam, FILE *ftp){
             Start = clock();
             insertion_sort(vet,n);
             End = clock();
+            printf("\nOrdenacao feita!\n");
+            saida = fopen("IS/ArquivosdeSaida//Crescentes//1000000ord.txt", "w");
+            for(int k = 0; k < n; k++){
+                fprintf(saida, "%d\n", vet[k]);
+            }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Crescentes//tempo1000000cres.txt", "w");
-            fprintf(ftp,"Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS/ArquivosdeTempo//Crescentes//tempo1000000cres.txt", "w");
+            fprintf(ftp,"Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         default:
-            printf("PDI 199191\n\n");
+            printf("Erro, fora do intervalo\n\n");
             break;
    }
 }

@@ -25,13 +25,13 @@ void arquiv_random(int op_tam, FILE *ftp, FILE *saida){
             insertion_sort(vet,n);
             End = clock();
             printf("\nOrdenacao feita\n");
-            saida = fopen("ArquivosdeSaida//Randomicas//10ord.txt", "w");
+            saida = fopen("IS//ArquivosdeSaida//Randomicas//10ord.txt", "w");
             for(int k = 0; k < n; k++){
                 fprintf(saida, "%d\n", vet[k]);
             }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Randomicas//tempo10random.txt", "w");
-            fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS//ArquivosdeTempo//Randomicas//tempo10random.txt", "w");
+            fprintf(ftp, "Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         case 2:
@@ -51,13 +51,13 @@ void arquiv_random(int op_tam, FILE *ftp, FILE *saida){
             insertion_sort(vet,n);
             End = clock();
             printf("\nOrdenacao feita\n");
-            saida = fopen("ArquivosdeSaida//Randomicas//100ord.txt", "w");
+            saida = fopen("IS//ArquivosdeSaida//Randomicas//100ord.txt", "w");
             for(int k = 0; k < n; k++){
                 fprintf(saida, "%d\n", vet[k]);
             }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Randomicas//tempo100random.txt", "w");
-            fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS//ArquivosdeTempo//Randomicas//tempo100random.txt", "w");
+            fprintf(ftp, "Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         case 3:
@@ -77,13 +77,13 @@ void arquiv_random(int op_tam, FILE *ftp, FILE *saida){
             insertion_sort(vet,n);
             End = clock();
             printf("\nOrdenacao feita\n");
-            saida = fopen("ArquivosdeSaida//Randomicas//1000ord.txt", "w");
+            saida = fopen("IS//ArquivosdeSaida//Randomicas//1000ord.txt", "w");
             for(int k = 0; k < n; k++){
                 fprintf(saida, "%d\n", vet[k]);
             }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Randomicas//tempo1000random.txt", "w");
-            fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS//ArquivosdeTempo//Randomicas//tempo1000random.txt", "w");
+            fprintf(ftp, "Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         case 4:
@@ -103,13 +103,13 @@ void arquiv_random(int op_tam, FILE *ftp, FILE *saida){
             insertion_sort(vet,n);
             End = clock();
             printf("\nOrdenacao feita\n");
-            saida = fopen("ArquivosdeSaida//Randomicas//10000ord.txt", "w");
+            saida = fopen("IS//ArquivosdeSaida//Randomicas//10000ord.txt", "w");
             for(int k = 0; k < n; k++){
                 fprintf(saida, "%d\n", vet[k]);
             }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Randomicas//tempo10000random.txt", "w");
-            fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS//ArquivosdeTempo//Randomicas//tempo10000random.txt", "w");
+            fprintf(ftp, "Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         case 5:
@@ -129,13 +129,13 @@ void arquiv_random(int op_tam, FILE *ftp, FILE *saida){
             insertion_sort(vet,n);
             End = clock();
             printf("\nOrdenacao feita\n");
-            saida = fopen("ArquivosdeSaida//Randomicas//100000ord.txt", "w");
+            saida = fopen("IS//ArquivosdeSaida//Randomicas//100000ord.txt", "w");
             for(int k = 0; k < n; k++){
                 fprintf(saida, "%d\n", vet[k]);
             }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Randomicas//tempo100000random.txt", "w");
-            fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS//ArquivosdeTempo//Randomicas//tempo100000random.txt", "w");
+            fprintf(ftp, "Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         case 6:
@@ -155,15 +155,17 @@ void arquiv_random(int op_tam, FILE *ftp, FILE *saida){
             insertion_sort(vet,n);
             End = clock();
             printf("\nOrdenacao feita\n");
-            saida = fopen("ArquivosdeSaida//Randomicas//1000000ord.txt", "w");
+            saida = fopen("IS//ArquivosdeSaida//Randomicas//1000000ord.txt", "w");
             for(int k = 0; k < n; k++){
                 fprintf(saida, "%d\n", vet[k]);
             }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Randomicas//tempo1000000random.txt", "w");
-            fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS//ArquivosdeTempo//Randomicas//tempo1000000random.txt", "w");
+            fprintf(ftp, "Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
+        default:
+            printf("Erro, fora do intervalo\n\n");
     }
 }
 #endif // RANDOM_H_INCLUDED

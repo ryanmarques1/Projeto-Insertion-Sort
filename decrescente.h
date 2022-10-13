@@ -27,13 +27,13 @@ void arquiv_decrescente(int op_tam, FILE *ftp, FILE *saida){
             insertion_sort(vet,n);
             End = clock();
             printf("\nOrdenacao feita!\n");
-            saida = fopen("ArquivosdeSaida//Decrescentes//10ord.txt", "w");
+            saida = fopen("IS/ArquivosdeSaida//Decrescentes//10ord.txt", "w");
             for(int k = 0; k < n; k++){
                 fprintf(saida, "%d\n", vet[k]);
             }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Decrescentes//tempo10decres.txt", "w");
-            fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS/ArquivosdeTempo//Decrescentes//tempo10decres.txt", "w");
+            fprintf(ftp, "Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         case 2:
@@ -54,13 +54,13 @@ void arquiv_decrescente(int op_tam, FILE *ftp, FILE *saida){
             insertion_sort(vet,n);
             End = clock();
             printf("\nOrdenacao feita!\n");
-            saida = fopen("ArquivosdeSaida//Decrescentes//100ord.txt", "w");
+            saida = fopen("IS/ArquivosdeSaida//Decrescentes//100ord.txt", "w");
             for(int k = 0; k < n; k++){
                 fprintf(saida, "%d\n", vet[k]);
             }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Decrescentes//tempo100decres.txt", "w");
-            fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS/ArquivosdeTempo//Decrescentes//tempo100decres.txt", "w");
+            fprintf(ftp, "Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         case 3:
@@ -81,13 +81,13 @@ void arquiv_decrescente(int op_tam, FILE *ftp, FILE *saida){
             insertion_sort(vet,n);
             End = clock();
             printf("\nOrdenacao feita!\n");
-            saida = fopen("ArquivosdeSaida//Decrescentes//1000ord.txt", "w");
+            saida = fopen("IS/ArquivosdeSaida//Decrescentes//1000ord.txt", "w");
             for(int k = 0; k < n; k++){
                 fprintf(saida, "%d\n", vet[k]);
             }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Decrescentes//tempo1000decres.txt", "w");
-            fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS/ArquivosdeTempo//Decrescentes//tempo1000decres.txt", "w");
+            fprintf(ftp, "Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         case 4:
@@ -108,13 +108,13 @@ void arquiv_decrescente(int op_tam, FILE *ftp, FILE *saida){
             insertion_sort(vet,n);
             End = clock();
             printf("\nOrdenacao feita!\n");
-            saida = fopen("ArquivosdeSaida//Decrescentes//10000ord.txt", "w");
+            saida = fopen("IS/ArquivosdeSaida//Decrescentes//10000ord.txt", "w");
             for(int k = 0; k < n; k++){
                 fprintf(saida, "%d\n", vet[k]);
             }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Decrescentes//tempo10000decres.txt", "w");
-            fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS/ArquivosdeTempo//Decrescentes//tempo10000decres.txt", "w");
+            fprintf(ftp, "Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         case 5:
@@ -133,15 +133,17 @@ void arquiv_decrescente(int op_tam, FILE *ftp, FILE *saida){
             printf("\n-----------------------------------\n");
             Start = clock();
             insertion_sort(vet,n);
+            //shell_sort(vet,n);
+            //bubble_sort(vet,n);
             End = clock();
             printf("\nOrdenacao feita!\n");
-            saida = fopen("ArquivosdeSaida//Decrescentes//100000ord.txt", "w");
+            saida = fopen("IS/ArquivosdeSaida//Decrescentes//100000ord.txt", "w");
             for(int k = 0; k < n; k++){
                 fprintf(saida, "%d\n", vet[k]);
             }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Decrescentes//tempo100000decres.txt", "w");
-            fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS/ArquivosdeTempo//Decrescentes//tempo100000decres.txt", "w");
+            fprintf(ftp, "Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         case 6:
@@ -162,17 +164,17 @@ void arquiv_decrescente(int op_tam, FILE *ftp, FILE *saida){
             insertion_sort(vet,n);
             End = clock();
             printf("\nOrdenacao feita!\n");
-            saida = fopen("ArquivosdeSaida//Decrescentes//1000000ord.txt", "w");
+            saida = fopen("IS/ArquivosdeSaida//Decrescentes//1000000ord.txt", "w");
             for(int k = 0; k < n; k++){
                 fprintf(saida, "%d\n", vet[k]);
             }
             temp_exec = ((End - Start) / (double)CLOCKS_PER_SEC);
-            ftp = fopen("ArquivosdeTempo//Decrescentes//tempo1000000decres.txt", "w");
-            fprintf(ftp, "Tempo de exec foi: %.4lf", temp_exec);
+            ftp = fopen("IS/ArquivosdeTempo//Decrescentes//tempo1000000decres.txt", "w");
+            fprintf(ftp, "Tempo de exec foi: %.5lf", temp_exec);
             free(vet);
             break;
         default:
-            printf("PDI 199191\n\n");
+            printf("Erro, fora do intervalo\n\n");
             break;
    }
 }
