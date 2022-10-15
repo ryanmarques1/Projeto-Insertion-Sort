@@ -23,15 +23,15 @@ int main()
             scanf("%c", &op2);
             switch(op2){
                 case 'c':
-                    arquiv_crescente(tam_op,ftp,saida);
+                    arquiv_crescente(op, tam_op,ftp,saida);
                     printf("Crescente\n");
                     break;
                 case 'd':
-                    arquiv_decrescente(tam_op,ftp,saida);
+                    arquiv_decrescente(op, tam_op,ftp,saida);
                     printf("Decrescente\n");
                     break;
                 case 'r':
-                    arquiv_random(tam_op,ftp,saida);
+                    arquiv_random(op, tam_op,ftp,saida);
                     printf("Randomica\n");
                     break;
                 default:
@@ -48,15 +48,15 @@ int main()
             scanf("%c", &op2);
             switch(op2){
                 case 'c':
-                    arquiv_crescente(tam_op,ftp,saida);
+                    arquiv_crescente(op, tam_op,ftp,saida);
                     printf("Crescente\n");
                     break;
                 case 'd':
-                    arquiv_decrescente(tam_op,ftp,saida);
+                    arquiv_decrescente(op, tam_op,ftp,saida);
                     printf("Decrescente\n");
                     break;
                 case 'r':
-                    arquiv_random(tam_op,ftp,saida);
+                    arquiv_random(op, tam_op,ftp,saida);
                     printf("Randomica\n");
                     break;
                 default:
@@ -74,15 +74,15 @@ int main()
             scanf("%c", &op2);
             switch(op2){
                 case 'c':
-                    arquiv_crescente(tam_op,ftp,saida);
+                    arquiv_crescente(op, tam_op,ftp,saida);
                     printf("Crescente\n");
                     break;
                 case 'd':
-                    arquiv_decrescente(tam_op,ftp,saida);
+                    arquiv_decrescente(op, tam_op,ftp,saida);
                     printf("Decrescente\n");
                     break;
                 case 'r':
-                    arquiv_random(tam_op,ftp,saida);
+                    arquiv_random(op, tam_op,ftp,saida);
                     printf("Randomica\n");
                     break;
                 default:
@@ -100,15 +100,15 @@ int main()
             scanf("%c", &op2);
             switch(op2){
                 case 'c':
-                    arquiv_crescente(tam_op,ftp,saida);
+                    arquiv_crescente(op, tam_op,ftp,saida);
                     printf("Crescente\n");
                     break;
                 case 'd':
-                    arquiv_decrescente(tam_op,ftp,saida);
+                    arquiv_decrescente(op, tam_op,ftp,saida);
                     printf("Decrescente\n");
                     break;
                 case 'r':
-                    arquiv_random(tam_op,ftp,saida);
+                    arquiv_random(op, tam_op,ftp,saida);
                     printf("Randomica\n");
                     break;
                 default:
@@ -126,7 +126,7 @@ int main()
             printf("Opcao errada, digite novamente!\n");
             break;
         }
-    }while(op!=4);
+    }while(op!=5);
     //free(vet);
     return 0;
 }

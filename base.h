@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <conio.h>
+#include <string.h>
 
 void hud(){
     printf("-------------------------------------------------------------------------------\n");
@@ -50,8 +51,8 @@ void insertion_sort(int vet[], int size_vet){
 }
 void bubble_sort(int vet[], int size_vet){
     int i,j,aux;
-    for(i = 0; i < size_vet-1; i++){ //n-1
-        for(j = 0; j < size_vet-i;j++){ //somatorio de i até n-1 tj
+    for(i = 1; i <= (size_vet-1); i++){ //n-1
+        for(j = 0; j < (size_vet-i);j++){ //somatorio de i até n-1 tj
             if(vet[j] > vet[j+1]){ //somatorio de i até n-1 tj-1
                 aux = vet[j];
                 vet[j] = vet[j+1]; //somatorio de i até n-1 tj-1
@@ -64,7 +65,6 @@ void shell_sort(int vet[], int size_vet){
     int i,j,h,temp;
     h = 1;
     while(h < size_vet/3) h = 3 * h + 1; //gerando valores para h;
-
     while(h > 0){
         for(i = h; i < size_vet; i++){
             temp = vet[i];
@@ -79,14 +79,14 @@ void shell_sort(int vet[], int size_vet){
     }
 }
 void selection_sort(int vet[], int size_vet){
-    int i,j,temp, aux;
+    int i,j,menor, aux;
     for(i = 0; i < size_vet-1;i++){
-        temp = i;
-        for(j = temp + 1; j < size_vet;j++){
-            if(vet[i] < vet[temp]) temp = j;
+        menor = i;
+        for(j = i + 1; j < size_vet;j++){
+            if(vet[j] < vet[menor]) menor = j;
         }
-        aux = vet[temp];
-        vet[temp] = vet[i];
+        aux = vet[menor];
+        vet[menor] = vet[i];
         vet[i] = aux;
     }
 }
