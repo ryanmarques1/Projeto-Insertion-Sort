@@ -55,9 +55,26 @@ void arquiv_decrescente(int algr, int op_tam, FILE *ftp, FILE *saida){
             }
             fclose(ftp);
             printf("\n-----------------------------------\n");
-            Start = clock();
-            insertion_sort(vet,n);
-            End = clock();
+            if(algr == 1){
+                Start = clock();
+                insertion_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 2){
+                Start = clock();
+                bubble_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 3){
+                Start = clock();
+                shell_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 4){
+                Start = clock();
+                selection_sort(vet,n);
+                End = clock();
+            }
             printf("\nOrdenacao feita!\n");
             saida = fopen(arq2, "w");
             for(int k = 0; k < n; k++){
@@ -85,9 +102,26 @@ void arquiv_decrescente(int algr, int op_tam, FILE *ftp, FILE *saida){
             }
             fclose(ftp);
             printf("\n-----------------------------------\n");
-            Start = clock();
-            insertion_sort(vet,n);
-            End = clock();
+            if(algr == 1){
+                Start = clock();
+                insertion_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 2){
+                Start = clock();
+                bubble_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 3){
+                Start = clock();
+                shell_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 4){
+                Start = clock();
+                selection_sort(vet,n);
+                End = clock();
+            }
             printf("\nOrdenacao feita!\n");
             saida = fopen(arq2, "w");
             for(int k = 0; k < n; k++){
@@ -115,9 +149,26 @@ void arquiv_decrescente(int algr, int op_tam, FILE *ftp, FILE *saida){
             }
             fclose(ftp);
             printf("\n-----------------------------------\n");
-            Start = clock();
-            insertion_sort(vet,n);
-            End = clock();
+            if(algr == 1){
+                Start = clock();
+                insertion_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 2){
+                Start = clock();
+                bubble_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 3){
+                Start = clock();
+                shell_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 4){
+                Start = clock();
+                selection_sort(vet,n);
+                End = clock();
+            }
             printf("\nOrdenacao feita!\n");
             saida = fopen(arq2, "w");
             for(int k = 0; k < n; k++){
@@ -145,9 +196,26 @@ void arquiv_decrescente(int algr, int op_tam, FILE *ftp, FILE *saida){
             }
             fclose(ftp);
             printf("\n-----------------------------------\n");
-            Start = clock();
-            insertion_sort(vet,n);
-            End = clock();
+            if(algr == 1){
+                Start = clock();
+                insertion_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 2){
+                Start = clock();
+                bubble_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 3){
+                Start = clock();
+                shell_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 4){
+                Start = clock();
+                selection_sort(vet,n);
+                End = clock();
+            }
             printf("\nOrdenacao feita!\n");
             saida = fopen(arq2, "w");
             for(int k = 0; k < n; k++){
@@ -175,9 +243,26 @@ void arquiv_decrescente(int algr, int op_tam, FILE *ftp, FILE *saida){
             }
             fclose(ftp);
             printf("\n-----------------------------------\n");
-            Start = clock();
-            insertion_sort(vet,n);
-            End = clock();
+            if(algr == 1){
+                Start = clock();
+                insertion_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 2){
+                Start = clock();
+                bubble_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 3){
+                Start = clock();
+                shell_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 4){
+                Start = clock();
+                selection_sort(vet,n);
+                End = clock();
+            }
             printf("\nOrdenacao feita!\n");
             saida = fopen(arq2, "w");
             for(int k = 0; k < n; k++){
@@ -205,9 +290,26 @@ void arquiv_decrescente(int algr, int op_tam, FILE *ftp, FILE *saida){
             }
             fclose(ftp);
             printf("\n-----------------------------------\n");
-            Start = clock();
-            insertion_sort(vet,n);
-            End = clock();
+            if(algr == 1){
+                Start = clock();
+                insertion_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 2){
+                Start = clock();
+                bubble_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 3){
+                Start = clock();
+                shell_sort(vet,n);
+                End = clock();
+            }
+            else if(algr == 4){
+                Start = clock();
+                selection_sort(vet,n);
+                End = clock();
+            }
             printf("\nOrdenacao feita!\n");
             saida = fopen(arq2, "w");
             for(int k = 0; k < n; k++){
